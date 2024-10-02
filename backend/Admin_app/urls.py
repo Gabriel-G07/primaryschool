@@ -1,14 +1,35 @@
-from django.urls import include, path
-from .views import CreateUserView
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.urls import path
 from . import views
+from .views import *
+
+
 
 
 urlpatterns = [
-    path("auth/", include("rest_framework.urls")),
-    path("admin_user/register/", CreateUserView.as_view(), name="register"),
-    path("token/", TokenObtainPairView.as_view(), name="get_token"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="refresh"),
-    path("notes/", views.NoteListCreate.as_view(), name="note-list"),
-    path("notes/delete/<int:pk>/", views.NoteDelete.as_view(), name="delete-note"),
+    path('routes/', views.getRoutes),
+    
+    #Web Site Urls
+
+    path('', WebsiteView.as_view(), name='WebsiteHome', kwargs={'template': 'index'}),
+    path('jobs/applications/', WebsiteView.as_view(), name='jobs_applications', kwargs={'template': 'jobs_applications'}),
+    path('student/application/', WebsiteView.as_view(), name='students_applications', kwargs={'template': 'students_applications'}),
+ 
+    
+    #Signup urls
+    path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', CustomTokenRefreshView.as_view(), name='token_refresh'),
+    path('register/staff/', RegisterStaffView.as_view(), name='auth_register_staff'),
+    path('register/student/', RegisterStudentView.as_view(), name='auth_register_student'),
+    
+    
+    #Main Admin
+    path('staff/details/', StaffDetailView.as_view(), name='staff_details'),
+    path('staff/', StaffView.as_view(), name='staff'),
+    path('students/', StudentsView.as_view(), name='students'),
+    path('staff/job/applications/', JobApplicationsView.as_view(), name='staff_job_applications'),
+    path('students/enrolments/', StudentsEnrolmentView.as_view(), name='students_enrolments'),
+    path('staff/job/applications/accepted/', AcceptedJobApplicationsView.as_view(), name='staff_job_applications_accepted'),
+    path('students/enrolments/accepted/', AcceptedStudentsEnrolmentView.as_view(), name='students_enrolments_accepted'),
+    
+    
 ]

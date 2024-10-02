@@ -16,8 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+from Admin_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("Admin_app.urls"))
+    path('', include("Admin_app.urls")),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path('user/settings/', UserSettingsView.as_view(), name='user_settings'),
 ]
+
+urlpatterns +=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

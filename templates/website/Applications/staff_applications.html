@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply For a job at Mount SUnset Group of Schools</title>
+</head>
+<body>
+    <h1>Add Staff Member</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Staff Member</button>
+    </form>
+</body>
+</html>
