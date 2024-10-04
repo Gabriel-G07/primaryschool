@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import Layout from "../pages/Admin_app/AdminBase";
+import LoadingIndicator from "../components/LoadingIndicator"
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const [loading, setLoading] = React.useState(true);
   }, [user, navigate, rest.location]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return LoadingIndicator
   }
 
   return <Layout>{children}</Layout>;
