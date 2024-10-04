@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
-import Layout from "../pages/Admin_app/home";
+import Layout from "../pages/Admin_app/AdminBase";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [loading, setLoading] = React.useState(true);
+const [loading, setLoading] = React.useState(true);                 
 
   React.useEffect(() => {
     if (!user ) {
