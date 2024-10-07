@@ -31,5 +31,7 @@ urlpatterns = [
     path('staff/job/applications/accepted/', AcceptedJobApplicationsView.as_view(), name='staff_job_applications_accepted'),
     path('students/enrolments/accepted/', AcceptedStudentsEnrolmentView.as_view(), name='students_enrolments_accepted'),
     
+    #Students
+    path('students/details/', StudentsDetailView.as_view(), name='Students_details'),
     
 ]

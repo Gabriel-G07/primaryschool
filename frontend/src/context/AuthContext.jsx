@@ -160,6 +160,24 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logoutStudent = () => {
+    setAuthTokens(null);
+    setUser(null);
+    localStorage.removeItem("authTokens");
+    localStorage.clear();
+    navigate("/students/signup");
+    Swal.fire({
+      title: "You have been logged out...",
+      icon: "success",
+      toast: true,
+      timer: 1500,
+      position: 'center',
+      timerProgressBar: false,
+      showConfirmButton: false,
+    });
+  };
+
+
   const loginStaffUser = async (username, password) => {
     try {
       const response = await fetch("http://127.0.0.1:8000/token/", {
@@ -391,6 +409,7 @@ export const AuthProvider = ({ children }) => {
     loginStaffUser,
     loginStudentUser,
     logoutUser,
+    logoutStudent,
     error,
   };
 

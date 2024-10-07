@@ -102,7 +102,7 @@ function AuthPage() {
             <h3>Students Signup Page</h3>
             <div className="form-input">
               {errors.username && <div style={{ color: 'red' }}>{errors.username}</div>}
-              <input type="text" id="usernameInput" name="username" placeholder="Username" 
+              <input type="text" id="usernameInput" name="username" placeholder="Reg Number" 
               value={formData.username} onChange={handleChange}/>
               <label htmlFor="usernameInput">Reg Number</label>
             </div>

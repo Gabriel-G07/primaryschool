@@ -54,28 +54,27 @@ const StudentInformationPage = () => {
   const { user } = useContext(AuthContext);
   const axiosInstance = useAxios();
   const navigate = useNavigate();
-  const [staffInfo, setStaffInfo] = useState({});
+  const [studentInfo, setStudentInfo] = useState({});
   const [error, setError] = useState(null);
   const isMounted = useRef(false);
   const [loading, setLoading] = useState(true);
 
-  const fetchStaffInfo = async () => {
+  const fetchStudentInfo = async () => {
     if (user && isMounted.current) {
       setLoading(true);
       try {
-        const response = await axiosInstance.get('/staff/details/', {
+        const response = await axiosInstance.get('/students/details/', {
           params: {
             timestamp: new Date().getTime()
           }
         });
-        setStaffInfo(response.data);
+        setStudentInfo(response.data);
       } catch (error) {
         if (error.response && error.response.data && error.response.data.error) {
           setError(error.response.data.error);
         } else {
           console.error(error);
-          setError('Failed to fetch staff information. Please try again later.');
-          navigate('/Student/signup');
+          setError('Failed to fetch student information. Please try again later.');
         }
       } finally {
         setLoading(false);
@@ -85,15 +84,15 @@ const StudentInformationPage = () => {
 
   useEffect(() => {
     isMounted.current = true;
-    fetchStaffInfo();
-    const intervalId = setInterval(fetchStaffInfo, 5000);
+    fetchStudentInfo();
+    const intervalId = setInterval(fetchStudentInfo, 5000);
     return () => {
       isMounted.current = false;
       clearInterval(intervalId);
     };
   }, []);
 
-  return <StudentInfoHTML user={user} staffInfo={staffInfo} loading={loading} error={error}/>;
+  return <StudentInfoHTML user={user} studentInfo={studentInfo} loading={loading} error={error}/>;
 };
 
 const StudentSettingsPage = () => {

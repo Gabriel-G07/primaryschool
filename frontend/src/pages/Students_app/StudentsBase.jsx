@@ -8,19 +8,23 @@ import {
   StudentDashboardPage, 
   StudentInformationPage,  
   StudentSettingsPage, 
+  StudentClassesPage,
+  StudentLibraryPage,
   StudentNoticesPage, 
   StudentResultsPage, 
   StudentTimeTablesPage 
 } from '../../components/Students_app/students';
+import AuthPage from './StudentSignup';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
-function Layout() {
+function StudentLayout() {
   const { user, logoutUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const token = localStorage.getItem('authTokens');
   const [content, setContent] = useState(<StudentDashboardPage />);
   const [loading, setLoading] = useState(true);
   const [timeoutId, setTimeoutId] = useState(null);
-  const [activeButton, setActiveButton] = useState('admin_dashboard');
+  const [activeButton, setActiveButton] = useState('student_dashboard');
 
   let user_id;
 
@@ -31,7 +35,7 @@ function Layout() {
 
   useEffect(() => {
     if (token === null) {
-      navigate("/admin/signup");
+      setLoading(false);
     } else {
       setLoading(false);
     }
@@ -41,38 +45,54 @@ function Layout() {
     const buttonId = e.target.id;
     setActiveButton(buttonId);
     switch (buttonId) {
-      case 'admin_dashboard':
+      case 'student_dashboard':
         setContent(<StudentDashboardPage />);
         break;
-      case 'admin_personal_info':
+      case 'student_personal_info':
         setContent(<StudentInformationPage />);
         break;
-      case 'admin_settings':
+      case 'student_settings':
         setContent(<StudentSettingsPage />);
         break;
-      case 'admin_notices':
+      case 'student_classes':
+        setContent(<StudentClassesPage/>);
+        break;
+      case 'student_library':
+        setContent(<StudentLibraryPage/>);
+        break;
+      case 'student_notices':
         setContent(<StudentNoticesPage/>);
         break;
-      case 'admin_timetables':
+      case 'student_timetables':
         setContent(<StudentTimeTablesPage/>);
         break;
-      case 'admin_reports':
+      case 'student_results':
         setContent(<StudentResultsPage/>);
         break;
-      case 'admin_applications':
-        setContent(<StudentApplicationsPage/>);
-        break;
-      case 'log_out':
-        logoutUser();
+      case 'student_log_out':
+        logoutStudent();
         break;
     }
   };
 
-  return <StudentsLayoutHTML
-    content={content}
-    handleNavClick={handleNavClick}
-    activeButton={activeButton}
-    logoutUser={logoutUser}
-  />;
+  if (loading) {
+    return <LoadingIndicator/>;
+  }
+
+  return (
+    <>
+      {token ? (
+        <StudentsLayoutHTML
+          content={content}
+          handleNavClick={handleNavClick}
+          activeButton={activeButton}
+          logoutUser={logoutUser}
+        />
+      ) : (
+        <AuthPage />
+      )}
+    </>
+  );
 };
-export default Layout;
+
+export default StudentLayout;

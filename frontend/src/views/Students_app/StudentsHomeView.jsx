@@ -4,7 +4,7 @@ const LayoutHTML = ({
   content,
   handleNavClick,
   activeButton,
-  logoutUser
+  logoutStudent
 }) => {
   return (
     <div className="container">
@@ -37,17 +37,16 @@ const LayoutHTML = ({
         <button className={`nav-button ${activeButton === 'student_results' ? 'active' : ''}`} id="student_results" onClick={handleNavClick}>
           Results
         </button>
-        <button className="nav-button" id="log_out" onClick={logoutUser}>
+        <button className="nav-button" id="student_log_out" onClick={logoutStudent}>
           Log Out
         </button>
       </div>
       <div className="header">
-        <h1>Mount Sunset Group Of Schools</h1>
-        <h2>Students Portal</h2>
+        <h1>Mount Sunset Group Of Schools Students Portal</h1>
       </div>
       <div className="content">{content}</div>
       <div className="footer">
-        <p>&copy; Powered By Double G Technologies</p>
+        <p> copyright &copy; Powered By Double G Technologies</p>
       </div>
     </div>
   );

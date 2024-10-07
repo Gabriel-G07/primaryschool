@@ -96,7 +96,16 @@ class StaffDetailView(APIView):
         except Staff.DoesNotExist:
             return Response({"error": "Staff not found"}, status=status.HTTP_404_NOT_FOUND)
 
-
+class StudentsDetailView(APIView):
+    def get(self, request):
+        username = request.user.username
+        try:
+            student = Students.objects.get(RegNumber=username)
+            serializer = StudentsSerializer(student)
+            return Response(serializer.data)
+        except Students.DoesNotExist:
+            return Response({"error": "Student not found"}, status=status.HTTP_404_NOT_FOUND)
+        
 class StaffView(APIView):
     def get(self, request):
         staff = Staff.objects.all()
