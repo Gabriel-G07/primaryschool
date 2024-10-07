@@ -1,3 +1,5 @@
+apiVersion: core.choreo.dev/v2alpha1
+kind: Component
 version: 0.1
 
 endpoints:

@@ -77,12 +77,12 @@ class WebsiteView(View):
             form = JobApplicationsForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('jobs_applications')
+                return redirect('WebsiteHome')
         elif kwargs.get('template') == 'students_applications':
             form = StudentEnrolmentForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('students_applications')
+                return redirect('WebsiteHome')
         return render(request, 'website/Applications/staff_applications.html', {'form': form})
 
 
