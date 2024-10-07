@@ -1,5 +1,5 @@
-apiVersion: core.choreo.dev/v2alpha1
-kind: Component
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
 version: 0.1
 
 endpoints:
