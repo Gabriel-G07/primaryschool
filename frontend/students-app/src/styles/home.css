@@ -1,0 +1,218 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --home-background-color: #201f1f;
+  --home-border-color: #da0c0c;
+  --content-background-color: #2e302e;
+  --content-text-color: #dfdee4;
+  --button-background-color: #1a1a1a;
+  --button-hover-border-color: #646cff;
+  --nav-button-background-color: #0056b3;
+  --nav-button-hover-background-color: #1565e7;
+  --nav-button-active-background-color: #2e302e;
+  --nav-button-active-text-color: #f50a0a;
+  --card-background-color: #310347;
+  --card-border-color: #480963;
+  --card-text-color: #fff;
+  --slider-background-color: #ccc;
+  --slider-checked-background-color: #219653;
+  --slider-red-background-color: #ff0000;
+  --white: #fff;
+  --black: #000;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --focus-ring-color: -webkit-focus-ring-color;
+}
+
+
+.header, .navbar, .footer {
+  position: fixed;
+}
+
+.header {
+  top: 0;
+  right: 0;
+  left: 240px;
+  
+  background-color: var(--home-background-color);
+  border-bottom: 1px solid var(--home-border-color);
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px var(--box-shadow-color);
+  color: var(--white);
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: var(--home-background-color);
+  padding: 20px;
+  border-right: 1px solid var(--home-border-color);
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.navbar img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.content {
+  margin-left: 230px;
+  margin-right: -8px;
+  height: calc(100vh);
+  overflow-y: auto; 
+  margin-bottom: 30px;
+  padding: 20px;
+  padding-bottom: 80px;
+  padding-top: 30px;
+  background-color: var(--content-background-color);
+  color: var(--content-text-color);
+  overflow: hidden;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 239px;
+  width: calc(100% - 200px);
+  background-color: var(--home-background-color);
+  padding: 5px;
+  text-align: center;
+  border-top: 1px solid var(--home-border-color);
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--button-hover-border-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto var(--focus-ring-color);
+}
+
+.nav-button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background-color: var(--nav-button-background-color);
+  cursor: pointer;
+  color: var(--white);
+}
+
+.nav-button:hover {
+  background-color: var(--nav-button-hover-background-color);
+}
+
+.nav-button.active {
+  background-color: var(--nav-button-active-background-color);
+  color: var(--nav-button-active-text-color);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.col-md-6 {
+  width: 50%;
+  float: left;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid var(--card-border-color);
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--box-shadow-color);
+}
+
+.card:hover {
+  box-shadow: 0 0 20px var(--box-shadow-color);
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slider-background-color);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--slider-checked-background-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--white);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--slider-checked-background-color);
+}
+
+.slider.red {
+  background-color: var(--slider-red-background-color);
+}
+
+.slider.red:before {
+  background-color: var(--white);
+}
+
+.slider.red:checked {
+  background-color: var(--slider-checked-background-color);
+}

@@ -7,8 +7,8 @@ def create_database():
     try:
         cnx = mysql.connector.connect(
             user='root',
-            
-            host='localhost'
+            password='rootpassword',
+            host='localhost',
         )
         cursor = cnx.cursor()
 

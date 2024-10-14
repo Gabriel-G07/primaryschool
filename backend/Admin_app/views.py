@@ -19,15 +19,11 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 
 
-
-
-
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
         '/token/',
         '/register/',
-        '/token/refresh/',
         '/jobs/applications/',
         ''
     ]
@@ -39,12 +35,6 @@ class MyTokenObtainPairView(TokenObtainPairView):
     @csrf_exempt
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
-
-class CustomTokenRefreshView(TokenRefreshView):
-    def dispatch(self, request, *args, **kwargs):
-        response = super().dispatch(request, *args, **kwargs)
-        response.set_cookie('csrftoken', get_token(request))
-        return response
     
 class RegisterStaffView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -59,6 +49,7 @@ class RegisterStudentView(generics.CreateAPIView):
 class UserSettingsView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = SettingsSerializer
+    
 class WebsiteView(View):
     permission_classes = (AllowAny,)
  
