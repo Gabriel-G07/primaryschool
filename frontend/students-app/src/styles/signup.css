@@ -1,6 +1,7 @@
 body {
   background-color: #201f1f;
   font-family: Arial, sans-serif;
+  align-items: center;
 }
 
 .form-container {
