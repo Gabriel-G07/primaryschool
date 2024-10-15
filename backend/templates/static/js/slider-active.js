@@ -17,7 +17,7 @@
                     keyboardNavigation:"off",
                     keyboard_direction: "horizontal",
                     mouseScrollNavigation:"off",
-                        mouseScrollReverse:"default",
+                    mouseScrollReverse:"default",
                     onHoverStop:"off",
                     touch:{
                         touchenabled:"on",

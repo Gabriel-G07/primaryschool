@@ -54,14 +54,54 @@ class WebsiteView(View):
     permission_classes = (AllowAny,)
  
     def get(self, request, *args, **kwargs):
-        if kwargs.get('template') == 'index':
-            return render(request, 'website/index.html')
+        if kwargs.get('template') == 'WebsiteHome':
+            return render(request, 'website/home.html')
         elif kwargs.get('template') == 'jobs_applications':
             form = JobApplicationsForm()
-            return render(request, 'website/Enrollments/staff_applications.html', {'form': form})
+            return render(request, 'website/admissions/staff_applications.html', {'form': form})
         elif kwargs.get('template') == 'students_applications':
             form = StudentEnrolmentForm()
-            return render(request, 'website/Enrollments/student_applications.html', {'form': form})
+            return render(request, 'website/admissions/student_applications.html', {'form': form})
+        elif kwargs.get('template') == 'who-we-are':
+            return render(request, 'website/about-us/who-we-are.html')
+        elif kwargs.get('template') == 'website_message':
+            return render(request, 'website/about-us/message.html')
+        elif kwargs.get('template') == 'vision-mission-objectives':
+            return render(request, 'website/about-us/objectives/vision-mission-objectives.html')
+        elif kwargs.get('template') == 'objectives-detail':
+            return render(request, 'website/about-us/objectives/objectives-detail.html')
+        elif kwargs.get('template') == 'staff&members':
+            return render(request, 'website/about-us/staff&members.html')
+        elif kwargs.get('template') == 'resources&facilities':
+            return render(request, 'website/about-us/resources&facilities.html')
+        elif kwargs.get('template') == 'history':
+            return render(request, 'website/about-us/history.html')
+        elif kwargs.get('template') == 'academic-information':
+            return render(request, 'website/academics/academic-information.html')
+        elif kwargs.get('template') == 'academic_grades':
+            return render(request, 'website/academics/academic-grades.html')
+        elif kwargs.get('template') == 'admission-notices':
+            return render(request, 'website/admissions/admission-notices.html')
+        elif kwargs.get('template') == 'news':
+            return render(request, 'website/news/news.html')
+        elif kwargs.get('template') == 'event':
+            return render(request, 'website/events/event.html')
+        elif kwargs.get('template') == 'event-details':
+            return render(request, 'website/events/event-details.html')
+        elif kwargs.get('template') == 'our-blog':
+            return render(request, 'website/blog/our-blog.html')
+        elif kwargs.get('template') == 'blog-details':
+            return render(request, 'website/blog/blog-details.html')
+        elif kwargs.get('template') == 'contact':
+            return render(request, 'website/contact/contact.html')
+        elif kwargs.get('template') == 'our-team':
+            return render(request, 'website/team.html')
+        elif kwargs.get('template') == 'service-details':
+            return render(request, 'website/about-us/service.html')
+        elif kwargs.get('template') == 'gallery':
+            return render(request, 'website/resources/gallery.html')
+        else:
+            return render(request, 'website/resources/error.html', status=404)
 
     def post(self, request, *args, **kwargs):
         if kwargs.get('template') == 'jobs_applications':
@@ -73,8 +113,8 @@ class WebsiteView(View):
             form = StudentEnrolmentForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('WebsiteHome')
-        return render(request, 'website/Applications/staff_applications.html', {'form': form})
+                return redirect('admission-notices')
+        return render(request, 'website/home.html', {'form': form})
 
 
 class StaffDetailView(APIView):

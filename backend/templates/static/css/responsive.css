@@ -146,6 +146,10 @@
 	}
 	.our-team .team-social-area .curve{
 		-webkit-transform: skewY(-6deg);
+		-moz-transform: skewY(-6deg);
+		-ms-transform: skewY(-6deg);
+		-o-transform: skewY(-6deg);
+		transform: skewY(-6deg);
 	}
 	.service-section .sidebar-catagories .list{
 		margin-bottom: 50px;
@@ -357,9 +361,7 @@
 	.main-footer .link-wideget .list li a{
 		width: 100px;
 	}
-	.our-team .team-social-area .curve{
-		top: 
-	}
+
 	.our-team .single-item{
 		max-width: 270px;
 		margin: auto;

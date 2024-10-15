@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Apply To Mount Sunset Group Of Schools</title>
-</head>
-<body>
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
     <h1>Student Application Form</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Send Application</button>
     </form>
-</body>
-</html>
+
+{% endblock %}

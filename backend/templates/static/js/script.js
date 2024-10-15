@@ -6,7 +6,7 @@
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
 		if($('.preloader').length){
-			$('.preloader').delay(200).fadeOut(500);
+			$('.preloader').delay(10).fadeOut(30);
 		}
 	}
 	
@@ -483,23 +483,6 @@
     
   		};
 	}
-
-
-
-
-
-	/*	=========================================================================
-	When document is Scrollig, do
-	========================================================================== */
-
-	jQuery(document).on('ready', function () {
-		(function ($) {
-			// add your functions
-	        donatepopup();
-		})(jQuery);
-	});
-
-
 
 	/* ==========================================================================
    When document is Scrollig, do

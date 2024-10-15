@@ -1,0 +1,92 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <!-- image-gallery / our-project -->
+    <section class="image-gallery our-project sec-pad">
+        <div class="container">
+            <div class="gallery-title centred">
+                <div class="title-head">Featured <span>Gallery</span></div>
+                <div class="section-title"><h2>Recent Prgrams &amp; Activities</h2></div>
+            </div>
+            <div class="row">
+                <div class="sortable-masonry">
+                    <div class="gallery-button filters text-center">
+                        <ul class="gallery_menu filter-tabs filter-btns clearfix">
+                            <li class="active filter" data-role="button" data-filter=".all">All</li>
+                            <li class="filter" data-role="button" data-filter=".dentistry">Quiz</li>
+                            <li class="filter" data-role="button" data-filter=".cleaning">ECA</li>
+                            <li class="filter" data-role="button" data-filter=".whitening">Seminar</li>
+                            <li class="filter" data-role="button" data-filter=".removal">Sports</li>
+                        </ul>
+                    </div>
+                    <div class="row items-container clearfix">
+                        <div class="col-md-4 col-sm-6 col-xs-12 masonry-item default-portfolio-item all dentistry cleaning calal">
+                            <div class="single-item">
+                                <div class="img-box">
+                                    <figure><img src="{% static 'images/gallery/1.jpg' %}" alt=""></figure>
+                                </div>
+                                <div class="shadow-box">
+                                    <div class="gallery-content">
+                                        <h3>Tincidunt Ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 masonry-item default-portfolio-item all removal whitening dentistry">
+                            <div class="single-item">
+                                <div class="img-box">
+                                    <figure><img src="{% static 'images/gallery/2.jpg' %}" alt=""></figure>
+                                </div>
+                                <div class="shadow-box">
+                                    <div class="gallery-content">
+                                        <h3>Tincidunt Ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 masonry-item default-portfolio-item all cleaning canal removal">
+                            <div class="single-item">
+                                <div class="img-box">
+                                    <figure><img src="{% static 'images/gallery/3.jpg' %}" alt=""></figure>
+                                </div>
+                                <div class="shadow-box">
+                                    <div class="gallery-content">
+                                        <h3>Tincidunt Ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 masonry-item default-portfolio-item all whitening dentistry canal">
+                            <div class="single-item">
+                                <div class="img-box">
+                                    <figure><img src="{% static 'images/gallery/4.jpg' %}" alt=""></figure>
+                                </div>
+                                <div class="shadow-box">
+                                    <div class="gallery-content">
+                                        <h3>Tincidunt Ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12 col-xs-12 masonry-item default-portfolio-item all cleaning removal children">
+                            <div class="single-item">
+                                <div class="img-box">
+                                    <figure><img src="{% static 'images/gallery/5.jpg' %}" alt=""></figure>
+                                </div>
+                                <div class="shadow-box">
+                                    <div class="gallery-content">
+                                        <h3>Tincidunt Ipsum</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gallery page / our-project end -->
+
+{% endblock %}

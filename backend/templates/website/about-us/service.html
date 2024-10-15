@@ -1,0 +1,96 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- service section -->
+    <section class="service-section service-page centred">
+        <div class="container">
+            <div class="team-title centred">
+                
+                <div class="section-title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #337ab7;">Our Services</span></h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/1.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-solar-panel"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Solar Power System</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/2.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-recycling"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Waste To Energy</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/3.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-wind-engine"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Wind Power Solution</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/4.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-nuclear"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Nuclear Energy</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/5.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-raindrop"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Save Water</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="img-box"><a href="{% url 'service-details' %}"><figure><img src="{% static 'images/service/6.jpg' %}" alt=""></figure></a></div>
+                        <div class="lower-content">
+                            <div class="icon-box"><a href="{% url 'service-details' %}"><i class="flaticon-wrench"></i></a></div>
+                            <h3><a href="{% url 'service-details' %}">Maintanance & Repair</a></h3>
+                            <div class="text"><p>Excepteur sint occaecat cupidatat non proi
+                            dent sunt in culpa qui officia deserunt 
+                            mollit anim id est.</p></div>
+                            <div class="button"><a href="#" class="btn-two">Read more</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service section end -->
+
+{% endblock %}

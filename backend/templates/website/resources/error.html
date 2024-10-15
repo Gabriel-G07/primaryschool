@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- error section-->
+    <section class="error-section error-page text-center">
+        <div class="team-title centred">
+            <div class="section-title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #337ab7;">Error</span></h2></div>
+        </div>
+        <div class="container">
+           <div class="error-title">404</div> 
+           <div class="error-content">
+               <h2 class="section-title">Oops! Page Not Found!</h2>
+               <p>The page you’re looking for dose not exist.<br>Take a moment and start from our</p>
+               <div class="error-btn">
+                   <a href="{% url 'WebsiteHome' %}" class="btn-one style-one">go to home</a>
+               </div>
+           </div>
+        </div>
+    </section>
+    <!-- error section end -->
+
+{% endblock %}

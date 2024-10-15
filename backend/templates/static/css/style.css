@@ -255,7 +255,16 @@ h6 a:hover{
   transition: all 500ms ease;
 }
 
-.preloader{position: fixed; left:0px;top:0px;height:100%;width: 100%;z-index:999999;background-color:#ffffff;background-position:center center;background-repeat:no-repeat;background-image:url(../images/icons/preloader.gif);}
+.preloader{
+  position: fixed; 
+  left:0px;top:0px;
+  height:100%;
+  width: 100%;
+  z-index:999999;
+  background-color:#ffffff;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-image:url(../images/icons/preloader.gif);}
 
 /** button **/
 
@@ -429,82 +438,6 @@ h6 a:hover{
   background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
   background: -webkit-radial-gradient(center ellipse, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
-}
-
-
-/*============= donate form area =================*/
-
-
-.donate-popup{
-  position:fixed;
-  left:0px;
-  top:-100%;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.80);
-  z-index:9999;
-  visibility:hidden;
-  opacity:0;
-  overflow:auto;
-  transition:all 700ms ease;
-  -moz-transition:all 700ms ease;
-  -webkit-transition:all 700ms ease;
-  -ms-transition:all 700ms ease;
-  -o-transition:all 700ms ease;
-}
-.donate-popup.popup-visible{
-  top:0;
-  visibility:visible;
-  opacity:1;
-}
-.donate-popup .close-donate{
-  position:absolute;
-  right:25px;
-  top:25px;
-  font-size:20px;
-  color:#ffffff;
-  cursor:pointer;
-  z-index:5;
-}
-.donate-popup .close-donate:hover{
-  opacity:0.70; 
-}
-
-.donate-form-area {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  background: #f2f2f2;
-  padding:57px;
-  border: 3px solid  #337ab7;
-}
-.donate-form-area h2{
-  font-size: 36px;
-  text-align: center;
-  font-weight: 400;
-  color: #222222;
-  margin-bottom: 40px;
-  text-transform: capitalize;
-  font-family: 'Montserrat', sans-serif;
-}
-.donate-form-area h4 {
-  font-size: 24px;
-  color: #444444;
-  font-weight: 400; 
-  margin-bottom: 18px;
-  text-transform: capitalize;
-  font-family: 'Montserrat', sans-serif;
-}
-.donate-form-area h3 {
-  font-weight: 400;
-  margin-top: 38px;
-  color: #444444;
-  margin-bottom: 28px;
-  text-transform: capitalize;
-  font-family: 'Montserrat', sans-serif;
-}
-.donate-form-area .form-group input{
-  width: 100%;
-  border: 1px solid #f4f4f4;
 }
 
 /*check list*/
@@ -876,7 +809,11 @@ h6 a:hover{
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   opacity:1;
+  transition:all 500ms ease;
   -webkit-transition:all 500ms ease;
+  -moz-transition:all 500ms ease;
+  -o-transition:all 500ms ease;
+  -ms-transition:all 500ms ease;
 }
 
 .main-menu .navigation > li:hover > a,.main-menu .navigation > li.current > a,
@@ -2571,4 +2508,25 @@ textarea{
 #contact-google-map {
   height: 420px;
   width: 100%;
+}
+
+#donate-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#close-popup {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

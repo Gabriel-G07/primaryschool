@@ -1,0 +1,107 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- our-blog / news-page -->
+    <section class="our-blog blog-page news-section sidebar-page-container">
+        <div class="container">
+            <div class="team-title centred">
+                <div class="section-title"><h2>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #337ab7;">News & Notices</span></h2></div>
+            </div>
+            <div class="row">
+                <div class="col-md-9 col-sm-12 col-xs-12 content-side">
+                    <div class="sidebar-details">
+                        <div class="single-item">
+                            <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/4.jpg' %}" alt=""></figure></a></div>
+                            <div class="lower-content">
+                                <div class="date">15 <span>Jan,</span> 2018</div>
+                                <h3><a href="{% url 'blog-details' %}">Curabit finibus dui sem.</a></h3>
+                                <div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p></div>
+                                <div class="button"><a href="{% url 'blog-details' %}" class="btn-two">Read more</a></div>
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/5.jpg' %}" alt=""></figure></a></div>
+                            <div class="lower-content">
+                                <div class="date">15 <span>Jan,</span> 2018</div>
+                                <h3><a href="{% url 'blog-details' %}">Curabit finibus dui sem.</a></h3>
+                                <div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p></div>
+                                <div class="button"><a href="{% url 'blog-details' %}" class="btn-two">Read more</a></div>
+                            </div>
+                        </div>
+                        <div class="single-item">
+                            <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/6.jpg' %}" alt=""></figure></a></div>
+                            <div class="lower-content">
+                                <div class="date">15 <span>Jan,</span> 2018</div>
+                                <h3><a href="{% url 'blog-details' %}">Curabit finibus dui sem.</a></h3>
+                                <div class="text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p></div>
+                                <div class="button"><a href="{% url 'blog-details' %}" class="btn-two">Read more</a></div>
+                            </div>
+                        </div>
+                       
+                       
+                    </div>
+                    <ul class="link-btn">
+                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 sidebar-side">
+                    <div class="sidebar">
+                        <div class="sidebar-search sidebar-widget">
+                            <div class="sidebar-title">Search</div>
+                            <div class="search-box">
+                                <form action="#">
+                                    <button><i class="fa fa-search"></i></button>
+                                    <input type="text" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="sidebar-catagories sidebar-widget">
+                            <div class="sidebar-title">Category</div>
+                            <ul class="list">
+                               
+                                <li><a href="#" class="active"><p>Art &amp; Crafts</p></a></li>
+                                <li><a href="#"><p>Sports</p></a></li>
+                                <li><a href="#"><p>Science &amp; Tecnologies</p></a></li>
+                                <li><a href="#"><p>Social service</p></a></li>
+                                <li><a href="#"><p>Pysical Education</p></a></li>
+                                <li><a href="{% url 'students_applications' %}">Enrole At Mount Sunset</a></li>
+                                <li><a href="{% url 'jobs_applications' %}">Apply For A job</a></li>
+                                <li><a href="#"><p>School Magazine</p></a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-post sidebar-widget">
+                            <div class="sidebar-title">Latest Post</div>
+                            <div class="single-post">
+                                <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/p1.jpg' %}" alt=""></figure></a></div>
+                                <h5><a href="{% url 'blog-details' %}">Totam Rem Aperiam Eaque Ipsa.</a></h5>
+                                <div class="date"><i class="fa fa-calendar"></i>15 Jan, 2018</div>
+                            </div>
+                            <div class="single-post">
+                                <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/p2.jpg' %}" alt=""></figure></a></div>
+                                <h5><a href="{% url 'blog-details' %}">Totam Rem Aperiam Eaque Ipsa.</a></h5>
+                                <div class="date"><i class="fa fa-calendar"></i>15 Jan, 2018</div>
+                            </div>
+                            <div class="single-post">
+                                <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/p3.jpg' %}" alt=""></figure></a></div>
+                                <h5><a href="{% url 'blog-details' %}">Totam Rem Aperiam Eaque Ipsa.</a></h5>
+                                <div class="date"><i class="fa fa-calendar"></i>15 Jan, 2018</div>
+                            </div>
+                            <div class="single-post">
+                                <div class="img-box"><a href="{% url 'blog-details' %}"><figure><img src="{% static 'images/news/p4.jpg' %}" alt=""></figure></a></div>
+                                <h5><a href="{% url 'blog-details' %}">Totam Rem Aperiam Eaque Ipsa.</a></h5>
+                                <div class="date"><i class="fa fa-calendar"></i>15 Jan, 2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our-blog / blog-page end -->
+
+{% endblock %}
