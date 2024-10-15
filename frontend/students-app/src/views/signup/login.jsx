@@ -5,6 +5,8 @@ const Login = ({
   formData,
   setFormData,
   handleChange,
+  isLogin,
+  setIsLogin,
   errors,
   handleForgotPassword,
 }) => {
@@ -25,7 +27,7 @@ const Login = ({
         />
       </a>
       <div className="form-input">
-        <label htmlFor="form2Example17">Reg Number</label><br></br>
+        <label htmlFor="form2Example17">Reg Number</label>
         <input 
           type="text" 
           id="form2Example17" 
@@ -38,7 +40,7 @@ const Login = ({
       </div>
       
       <div className="form-input password-input">
-        <label htmlFor="form2Example27">Password</label><br></br>
+        <label htmlFor="form2Example27">Password</label>
         <input 
           type={showPassword ? "text" : "password"} 
           id="form2Example27"   

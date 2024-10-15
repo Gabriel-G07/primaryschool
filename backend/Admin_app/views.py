@@ -55,13 +55,13 @@ class WebsiteView(View):
  
     def get(self, request, *args, **kwargs):
         if kwargs.get('template') == 'index':
-            return render(request, 'index.html')
+            return render(request, 'website/index.html')
         elif kwargs.get('template') == 'jobs_applications':
             form = JobApplicationsForm()
-            return render(request, 'website/Applications/staff_applications.html', {'form': form})
+            return render(request, 'website/Enrollments/staff_applications.html', {'form': form})
         elif kwargs.get('template') == 'students_applications':
             form = StudentEnrolmentForm()
-            return render(request, 'website/Applications/student_applications.html', {'form': form})
+            return render(request, 'website/Enrollments/student_applications.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
         if kwargs.get('template') == 'jobs_applications':

@@ -71,7 +71,7 @@ const StudentLayout = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     if (!formData.username || !formData.password) {
-      setErrors({ ...errors, username: "Username and password are required" });
+      setErrors({ ...errors, username: "Missing Information" });
       return;
     }
     loginStudentUser(formData.username, formData.password).then(() => {
@@ -115,6 +115,7 @@ const StudentLayout = () => {
         password: '',
         password2: '',
       });
+      setIsLogin(true);
     });
   };
 

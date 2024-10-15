@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const Signup = ({
     handleSubmitRegister,
     formData,
+    isLogin,
+    setIsLogin,
     setFormData,
     handleChange,
     errors,
@@ -66,10 +68,10 @@ const Signup = ({
     
       return (
         <form onSubmit={handleSubmitRegister}>
-          <h1>Mount Sunset Group Of Schools</h1>
-          <h3>Students Signup Page</h3>
+          <h1>Student Signup</h1>
           <div className="form-input">
-            {errors.username && <div style={{ color: 'red' }}>{errors.username}</div>}
+            {errors.username && <div className="error-message">{errors.username}</div>}
+            <label htmlFor="usernameInput">Reg Number</label>
             <input 
               type="text" 
               id="usernameInput" 
@@ -78,11 +80,11 @@ const Signup = ({
               value={formData.username} 
               onChange={handleChange}
             />
-            <label htmlFor="usernameInput">Reg Number</label>
           </div>
           
           <div className="form-input">
-            {errors.first_name && <div style={{ color: 'red' }}>{errors.first_name}</div>}
+            {errors.first_name && <div className="error-message">{errors.first_name}</div>}
+            <label htmlFor="firstNameInput">Name(s)</label>
             <input 
               type="text" 
               id="firstNameInput" 
@@ -91,11 +93,10 @@ const Signup = ({
               value={formData.first_name} 
               onChange={handleChange}
             />
-            <label htmlFor="firstNameInput">Name(s)</label>
           </div>
-    
+      
           <div className="form-input">
-            {errors.last_name && <div style={{ color: 'red' }}>{errors.last_name}</div>}
+            {errors.last_name && <div className="error-message">{errors.last_name}</div>}
             <input 
               type="text" 
               id="lastNameInput" 
@@ -106,9 +107,9 @@ const Signup = ({
             />
             <label htmlFor="lastNameInput">Surname</label>
           </div>
-    
+      
           <div className="form-input">
-            {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
+            {errors.email && <div className="error-message">{errors.email}</div>}
             <input 
               type="email" 
               id="emailInput" 
@@ -119,9 +120,9 @@ const Signup = ({
             />
             <label htmlFor="emailInput">Email Address</label>
           </div>
-    
+      
           <div className="form-input password-input">
-            {errors.password && <div style={{ color: 'red' }}>{errors.password}</div>}
+            {errors.password && <div className="error-message">{errors.password}</div>}
             <input 
               type={showPassword ? "text" : "password"} 
               id="passwordInput" 
@@ -138,7 +139,7 @@ const Signup = ({
             {formData.password && (
               <ul>
                 <li>
-                  <span style={{ color: passwordError.length ? 'red' : 'green' }}>
+                  <span className={passwordError.length ? 'error' : 'success'}>
                     {passwordError.length ? 
                       <i className="fas fa-times"></i> 
                       : 
@@ -148,7 +149,7 @@ const Signup = ({
                   </span>
                 </li>
                 <li>
-                  <span style={{ color: passwordError.uppercase ? 'red' : 'green' }}>
+                  <span className={passwordError.uppercase ? 'error' : 'success'}>
                     {passwordError.uppercase ? 
                       <i className="fas fa-times"></i> 
                       : 
@@ -158,7 +159,7 @@ const Signup = ({
                   </span>
                 </li>
                 <li>
-                  <span style={{ color: passwordError.lowercase ? 'red' : 'green' }}>
+                  <span className={passwordError.lowercase ? 'error' : 'success'}>
                     {passwordError.lowercase ? 
                       <i className="fas fa-times"></i> 
                       : 
@@ -168,7 +169,7 @@ const Signup = ({
                   </span>
                 </li>
                 <li>
-                  <span style={{ color: passwordError.digit ? 'red' : 'green' }}>
+                  <span className={passwordError.digit ? 'error' : 'success'}>
                     {passwordError.digit ? 
                       <i className="fas fa-times"></i> 
                       : 
@@ -178,60 +179,60 @@ const Signup = ({
                   </span>
                 </li>
                 <li>
-              <span style={{ color: passwordError.specialChar ? 'red' : 'green' }}>
-                {passwordError.specialChar ? 
-                  <i className="fas fa-times"></i> 
-                  : 
-                  <i className="fas fa-check"></i>
-                } 
-                At least one special character
-              </span>
-            </li>
-          </ul>
-        )}
-      </div>
-
-      <div className="form-input password-input">
-        {errors.password2 && <div style={{ color: 'red' }}>{errors.password2}</div>}
-        <input 
-          type={showConfirmPassword ? "text" : "password"} 
-          id="confirmPasswordInput" 
-          name="password2" 
-          placeholder="Confirm Password" 
-          value={formData.password2} 
-          onChange={handleChange}
-        />
-        <i 
-          className={`fas ${showConfirmPassword ? "fa-eye-slash" : "fa-eye"}`} 
-          onClick={handleShowConfirmPassword}
-        />
-        <label htmlFor="confirmPasswordInput">Confirm Password</label>
-        {formData.password2 && formData.password !== formData.password2 && (
-          <span className='error-message'> 
-            <i className="fas fa-times"></i> Passwords do not match
-          </span>
-        )}
-      </div>
-
-      <button 
-        className={`form-button ${isFormValid ? 'valid' : 'disabled'}`} 
-        type="submit" 
-        disabled={!isFormValid}
-      >
-        Register
-      </button>
+                  <span className={passwordError.specialChar ? 'error' : 'success'}>
+                    {passwordError.specialChar ? 
+                      <i className="fas fa-times"></i> 
+                      : 
+                      <i className="fas fa-check"></i>
+                    } 
+                    At least one special character
+                  </span>
+                </li>
+              </ul>
+            )}
+          </div>
       
-      <div>
-        Already have an account? 
-        <a 
-          className="small text-muted" 
-          onClick={() => setIsLogin(true)}
-        >
-          Login Now
-        </a>
-      </div>
-    </form>
-  );
+          <div className="form-input password-input">
+            {errors.password2 && <div className="error-message">{errors.password2}</div>}
+            <input 
+              type={showConfirmPassword ? "text" : "password"} 
+              id="confirmPasswordInput" 
+              name="password2" 
+              placeholder="Confirm Password" 
+              value={formData.password2} 
+              onChange={handleChange}
+            />
+      <i 
+        className={`fas ${showConfirmPassword ? "fa-eye-slash" : "fa-eye"}`} 
+        onClick={handleShowConfirmPassword}
+      />
+      <label htmlFor="confirmPasswordInput">Confirm Password</label>
+      {formData.password2 && formData.password !== formData.password2 && (
+        <span className='error-message'> 
+          <i className="fas fa-times"></i> Passwords do not match
+        </span>
+      )}
+    </div>
+
+    <button 
+      className={`form-button ${isFormValid ? 'valid' : 'disabled'}`} 
+      type="submit" 
+      disabled={!isFormValid}
+    >
+      Register
+    </button>
+    
+    <div>
+      Already have an account? 
+      <a 
+        className="small text-muted" 
+        onClick={() => setIsLogin(true)}
+      >
+        Login Now
+      </a>
+    </div>
+  </form>
+);
 };
 
 export default Signup;

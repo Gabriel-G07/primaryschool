@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Login from './signup/login';
 import Signup from './signup/signin';
 import PasswordReset from './signup/password_reset';
@@ -25,24 +25,28 @@ const StudentLoginHTML = ({
         />
       </div>
       <div className="form-card">
-        {isLogin ? (
+        {isLogin === true ? (
           <Login 
             handleSubmitLogin={handleSubmitLogin}
             formData={formData}
             setFormData={setFormData}
             handleChange={handleChange}
+            setIsLogin={setIsLogin}
             errors={errors}
-            handleForgotPassword={handleForgotPassword}
+            handleForgotPassword={() => setIsLogin(null)}
           />
-        ) : (
+        ) : isLogin === false ? (
           <Signup 
             handleSubmitRegister={handleSubmitRegister}
+            setIsLogin={setIsLogin}
             formData={formData}
             setFormData={setFormData}
             handleChange={handleChange}
             errors={errors}
           />
-        )}
+        ) : isLogin === null ? (
+          <PasswordReset setIsLogin={setIsLogin} /> // Pass setIsLogin as prop
+        ) : null}
       </div>
     </div>
   );
